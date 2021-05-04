@@ -29,6 +29,20 @@
         .home:hover{background-position: 0px -45px;}
         .prev:hover {width:43px; height:44px; background-position:-47px -45px;}
         .next:hover {width:43px; height:44px; background-position:-91px -45px;}
+
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+        }
+        ul li {
+            /*list-style-image: url(img/target.png);*/
+            background: url(img/target.png) no-repeat left top;
+            height:35px;
+            padding-left:45px;
+            padding-top:5px;
+
+        }
     </style>
 
 </head>
@@ -55,6 +69,14 @@
     <div class="sprite1 btn prev"></div>
     <div class="sprite1 btn next"></div>
 
+    <h2>블릿이미지</h2>
+    <ul>
+        <li>라면</li>
+        <li>햄버거</li>
+        <li>자장면</li>
+        <li>탕수육</li>
+        <li>민트초코</li>
+    </ul>
 </body>
 </html>
 <!--
@@ -86,4 +108,11 @@ background : 배경색/이미지/반복/위치/고정여부
 줄일수 있고, 로딩시간이 단축되는 효과가 있음
 또한, 많은 이미지 파일을 관리하는 것보다
 몇개의 파일만 관리하면 되므로 간편함
+
+블릿이미지
+목록태그의 글머리기호는 크게 3가지 종류로 나뉨
+하지만, 기호 말고 이미지로 기호를 대신할 수도 있음
+list-style-type 속성으로 기호의 종류를 변경하거나 숨길 수 있음
+list-style-image 속성으로 기호 대신 블릿이미지를 표시할 수 있음
+
 -->
