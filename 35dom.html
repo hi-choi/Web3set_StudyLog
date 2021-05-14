@@ -118,17 +118,17 @@
         <h2>주소검색</h2>
         <div>
             <select id='sido'>
-                <option>-시/도</option>
+                <option>-시/도-</option>
                 <option>서울특별시</option>
-                <option>인천광역시</option>
                 <option>경기도</option>
+                <option>인천광역시</option>
                 <option>부산광역시</option>
             </select>
             <select id='gugun'>
-                <option>-시/군/구</option>
+                <option>-시/군/구-</option>
             </select>
             <select id='dong'>
-                <option>-읍/면/동</option>
+                <option>-읍/면/동-</option>
             </select>
         </div>
         <p id="addr"></p>
@@ -163,20 +163,35 @@
             function makegu() {
                 //alert(sido.selectedIndex);
 
+                removegu();
+                let scIdx = sido.selectedIndex;
                 //for of를 이용해서 배열요소 출력
                 //sgg배열의 각 객체 순환
-                for(let sggObj of sgg){
+                /*for(let sggObj of sgg[scIdx]){
+                    console.log(sggObj);
 
-                    //sgg배열의 각 객체의 요소 순환
-                    for(let sggEle of sggObj ){
-                        document.write(sggEle);
-                    }
-                   document.write("<br>");
+                }*/
+                for(let sggObj of sgg[scIdx]){
+                    console.log(sggObj);
+                    let option = document.createElement('option'); // gugun에 option 추가
+                    let optionText = document.createTextNode(sggObj); // 텍스트 생성
+
+                    option.appendChild(optionText); //텍스트를 option태그에 연결
+
+                    gugun.appendChild(option);
+
                 }
-                // createTextNode
 
             }
-            makegu();
+
+            function removegu(){
+                let option = document.getElementById('gugun');
+                    while(option.firstChild){
+                    option.removeChild(option.firstChild);
+                }
+            }
+
+
 
         </script>
     </body>
