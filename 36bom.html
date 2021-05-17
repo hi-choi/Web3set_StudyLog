@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>bom</title>
+    </head>
+    <body>
+        <h1>bom</h1>
+        <div>
+            <button type="button" id="newbtn">새창만들기</button>
+            <button type="button" id="rmvbtn">새창닫기</button>
+            <button type="button" id="movbtn">새창위치변경</button>
+            <button type="button" id="sizbtn">새창크기변경</button>
+            <button type="button" id="cntbtn">화면중앙에 창띄우기</button>
+            <button type="button" id="autobtn">
+                창띄우고 위치/크기변경 무한 실행</button>
+            <button type="button" id="stopbtn">
+                창띄우고 위치/크기변경 무한 실행 중지</button>
+        </div>
+
+        <script>
+            // 버튼 객체 초기화
+            let newbtn = document.getElementById('newbtn');
+            let rmvbtn = document.getElementById('rmvbtn');
+            let movbtn = document.getElementById('movbtn');
+            let sizbtn = document.getElementById('sizbtn');
+            let cntbtn = document.getElementById('cntbtn');
+            let autobtn = document.getElementById('autobtn');
+            let stopbtn = document.getElementById('stopbtn');
+
+            // 버튼 객체에 이벤트 추가
+            // makewin closewin movewin sizewin cntrwin autowin stopwin
+            newbtn.addEventListener('click', makewin);
+            rmvbtn.addEventListener('click',closewin);
+            movbtn.addEventListener('click',movewin);
+            sizbtn.addEventListener('click',sizewin);
+            cntbtn.addEventListener('click',cntrwin);
+            autobtn.addEventListener('click',autowin);
+            stopbtn.addEventListener('click',stopwin);
+
+            // 새창핸들러
+            // window.open(문서경로, 창이름, 옵션)
+            var newwin = null;  // 생서된 창 관리용 변수
+            function makewin(){
+                //window.open('35dom.html','');
+                if (newwin == null)
+                    newwin = window.open('35dom.html','','width=300, height=300')
+            }
+
+            // 창닫기 핸들러
+            // window.close, 객체명.close
+            function closewin(){
+                if(newwin != null){
+                    newwin.close();
+                    newwin = null;
+                }
+            }
+
+            // 생성한 창의 위치 변경ㅇ
+            // moveTo(x,y) : 절대좌표, moveBy(a,b) : 상대크기
+            // x,y 좌표를 난수로 생성함
+            // x의 최대값은 1920, y의 최대값은 1080으로 설정
+            function movewin() {
+                //newwin.moveTo(500,500);
+
+                let x = Math.floor(Math.random()*1920);
+                let y = Math.floor(Math.random()*1080);
+                newwin.moveTo(x,y);
+                newwin.focus();
+            }
+        </script>
+    </body>
+
+</html>
+<!--
+브라우저 객체모델 (bom)
+자바스크립트를 이용해서 접속자의 브라우져/운영체제 정보를 알아내거나
+브라우져 크기나 위치를 설정하는등의 브라우져의 여러기능을
+동적으로 제어할 수 있도록 지원하는 프로그래밍 모델
+
+DOM은 W3C 표준이지만, BOM은 표준이 아니기 때문에
+브라우져마다 사용하는 방법이나 결과가 다를 수 있음
+
+-->
+
+<!--
+window 객체
+브라우저 창을 제어할 수 있는 여러가지 속성을 제공
+alert    : 간단한 메세지창 생성
+prompt   : 간단한 입력창 생성, 반환값은 입력값, 값의 유형은 문자열
+confirm  : 간단한 선택창 생성, 반환값은 true/false 중 하나
+moveTo   : 브라우져의 위치를 변경
+resizeTo : 브라우져의 크기를 변경
+-->
