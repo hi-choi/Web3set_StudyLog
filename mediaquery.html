@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                font-size:30px;
+                text-align:center;
+            }
+            ul{
+                text-align:center;
+                width:100%;
+                display:table;
+                background-color:lightblue;
+                
+            }
+            li{
+                display:inline;
+                background-color:lightblue;
+                margin-right : 20px;
+                
+                
+            }
+
+            @media(max-width:800px){
+                div{
+                    text-align:left;
+                }
+                ul{
+                    width:100px;
+                    text-align:unset;
+                }
+                li{
+                    display:block;
+                    margin-right:0px;
+                    margin-bottom:10px;
+                    padding-top:10px;
+                }
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        MediaQuery
+        </div>
+        <ul>
+            <li>Menu1</li>
+            <li>Menu2</li>
+            <li>Menu3</li>
+            <li>Menu4</li>
+            <li>Menu5</li>
+        </ul>
+    </body>
+</html>

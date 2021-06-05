@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #header{
+                font-size:30px;
+                text-align:center;
+            }
+            ul{
+                display:table;
+                text-align:center;
+                background-color:lightblue;
+                width:100%;
+                margin-bottom:0px;
+            }
+            li{
+                display:inline;
+                margin-right:30px;
+            }
+            #article{
+                display:grid;
+                height:300px;
+                grid-template-columns:1fr 1fr 1fr;
+            }
+            #art1{
+                background-color:ivory;
+                text-align:center;
+            }
+            #art2{
+                text-align:center;
+                display:grid;
+                grid-template-rows:2fr 1fr;
+            }
+            #art2-2{
+                background-color:ivory;
+            }
+            #art3{
+                background-color:ivory;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            Header
+        </div>
+        <ul>
+            <li>Menu1</li>
+            <li>Menu2</li>
+            <li>Menu3</li>
+            <li>Menu4</li>
+            <li>Menu5</li>
+        </ul>
+        <div id="article">
+            <span id="art1">구역 1</span>
+            <span id="art2">
+                <div id="art2-1">구역 2-1</div>
+                <div id="art2-2">구역 2-2</div>
+            </span>
+            <span id="art3">구역 3</span>
+        </div>
+    </body>
+</html>
